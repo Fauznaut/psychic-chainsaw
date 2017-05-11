@@ -41,6 +41,16 @@ class Errors
 
 		http_response_code($code);
 
+		$log = dirname(__DIR__) . '/logs/' . date('Y-m-d') . '.txt';
+		ini_set('error_log', $log);
+
+		$message = "Uncaught exception: '" . get_class($exception) . "'";
+		$message .= " with message '" . $exception->getMessage() . "'";
+		$message .= "\nStack trace: " . $exception->getTraceAsString();
+		$message .= "\nThrown in '" . $exception->getFile() . "' on line " . $exception->getLine();
+
+		error_log($message);
+
 		if (!Config::$PRODUCTION && Config::$SHOW_ERRORS || Sessions::isUserAdmin())
 		{
 			if (Config::$PRODUCTION || !Config::$SHOW_ERRORS && Sessions::isUserAdmin())
@@ -72,16 +82,6 @@ class Errors
 		}
 		else
 		{
-			$log = dirname(__DIR__) . '/logs/' . date('Y-m-d') . '.txt';
-			ini_set('error_log', $log);
-
-			$message = "Uncaught exception: '" . get_class($exception) . "'";
-			$message .= " with message '" . $exception->getMessage() . "'";
-			$message .= "\nStack trace: " . $exception->getTraceAsString();
-			$message .= "\nThrown in '" . $exception->getFile() . "' on line " . $exception->getLine();
-
-			error_log($message);
-
 			if (Sessions::isUserAdmin())
 			{
 				View::renderTemplate("Errors/admin.twig", [

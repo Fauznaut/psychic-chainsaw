@@ -59,19 +59,7 @@ class Config
 	 *
 	 * @var array
 	 */
-	public static $MAILER_DATA = [
-		'send' => [
-			'host' => '',
-			'port' => '',
-			'title' => '',
-			'user' => '',
-			'pass' => ''
-		],
-		'reply' => [
-			'title' => '',
-			'user' => ''
-		]
-	];
+	public static $MAILER_DATA;
 
 	/**
 	 * This will determing if the config/site is production
@@ -119,5 +107,5 @@ class Config
 	 *
 	 * @var string
 	 */
-	public static $CRYPTOLIB_PEPPER = 'u9k3HvsC8Slm0Qj5kr0GeZP3LOWgIT4ivJIqHhhwJB4J7D0udfde4EC21kmiyeuoG6lWmwKxo7XSApSnYnmqKM0zhUwsxQWaYWp0PgRTghOdIVmgq1ibLdKiZYktVkBmmm4lB9V0z7w91Ya6QPhQAKXOctCDW5awXwUJElS5SlSqHnVwTCZDSHkBjvnQArnysPmlWPvdQO2pWRSxb0gj0HumFQexlOl52Gof7Gp11cjXOz1lB3BEuOAkMaM6to1ZmIs7logZHaVzjUlrhfDzWEReqSr8dVyyOt0m67pyoZrEDgtJge0Dfh4Uou4Kv7PHqvY8qKJgmOiJE4FKyCu3WgUtwMzw5Wf2S0VDMZg1t5OHMvmj2VIpI2pzlix6pufnNgcPG1Xe2kftdlAwtwcVxKz4d1IHKxBVSLEa6cjR4BC0O2NeT3FBehkXbOkbwQnqDWhsIXrRQtQgNufAfTt6hec7vsTLPVZ24S5k3RoCwpzG5NZZgzbNyizUynrNjyozX11Ey4xmXirCWbbPZeeSAM8KnJKmW53tQ2LF2fMsaBeLvPk1SzA0Ne2UYEz3LtaMitMqSMbvhDWDwlhbHz4an79rALRveseFeCH8RCadyJzwsHuj';
+	public static $CRYPTOLIB_PEPPER = 'QAvUVh9pmAqMSExRkzLwZOw8T5zt7AeCOjJvxPH9R5ZqCTBH4xsLWDO4MWBx0ea74GRjDSk4bHFYdrxe07ytqLuBf5JBQqB9YvtJ0aEinnz2iZaafQ1aAwKAww01JUen3DkFhDSHirqT8DlQSO5MyTrVWQxJeJzjONSc8RHlw30InqmjXTEHa7rMfqVpUoWpVFFBhtt2uDdtDFfloBU7ysCKvpXUm9DYhAwk42BEZ34WoovNZYqPS3rLoPUmnfwbgTsTvAjsYSVqI1pCHxLALzHXuYYdaB5BpXHQFwBqYS21LZ1LPdhw9ZvOhWkiooOkdOkOlxvQEYvD2nA4RDGBHqpmfIHKBqPPlixyNZq1qXOUK5o1SS1QS6PaJrkXMfbzqLEd6PPVHFGtMTzNc4JYKa6X7SiwajQteqhTceKqSiX0YMmBoMqyLW8XWETgb6kfUi5qMx7XEMBC0tcjlkOxQbNM1eZqqsb9wZBcZTzsvFpxhG0jlzP2K7Lz9xtoQOTfyGypZmSox2wWKlhGpQZFnS1sWzREy7IbO8aqImAKlljsEG4LtRnfUMPDEWC8kvxjpUgL4tCvIeHT209jdClifDW8SENiVnPCPoXtROsxhoc7GxDn';
 }

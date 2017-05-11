@@ -71,7 +71,7 @@ class Utilities
 	 */
 	public static function redirect($path = '')
 	{
-		header('Location: ' . $_SERVER['HTTP_HOST'] . $path);
+		header('Location: ' . Config::$SITE_FULL_PATH . $path);
 		exit();
 	}
 
@@ -83,6 +83,6 @@ class Utilities
 	public static function ifUserIsLoggedInRedirectToProfile()
 	{
 		if (Sessions::isUserLoggedIn())
-			Utilities::redirect('/user/' . Sessions::getUserId());
+			Utilities::redirect('user/' . Sessions::getUserId());
 	}
 }
