@@ -1,0 +1,10 @@
+@font-face
+{
+	font-family: 'ER Univers KOI-8';
+	src: url('ER-UniversKOI-8Bold.eot');
+	src: url('ER-UniversKOI-8Bold.eot?#iefix') format('embedded-opentype'),
+		url('ER-UniversKOI-8Bold.woff') format('woff'),
+		url('ER-UniversKOI-8Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
