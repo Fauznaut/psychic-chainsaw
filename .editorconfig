@@ -1,0 +1,11 @@
+# Please obide by me!
+# (If you are in an editor, please see if there is a plugin that will auto use it!)
+root = true
+
+[*]
+indent_style = tab
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
