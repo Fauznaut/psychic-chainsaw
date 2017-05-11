@@ -14,6 +14,27 @@ class Config
 	public static $PRODUCTION = false;
 
 	/**
+	 * Should we show errors
+	 *
+	 * @var boolean
+	 */
+	public static $SHOW_ERRORS = true;
+
+	/**
+	 * The site's path
+	 *
+	 * @var string
+	 */
+	public static $SITE_PATH = 'psychic-chainsaw/src/public_html/';
+
+	/**
+	 * The site's path and host
+	 *
+	 * @var string
+	 */
+	public static $SITE_FULL_PATH;
+
+	/**
 	 * The production config file path
 	 *
 	 * @var string
@@ -40,6 +61,9 @@ class Config
 	 */
 	public static function register()
 	{
+		// Setup the SITE_FULL_PATH
+		Config::$SITE_FULL_PATH = isset($_SERVER["HTTPS"]) ? 'https' : 'http' . '://' . $_SERVER['HTTP_HOST'] . '/' . Config::$SITE_PATH;
+
 		// If the production config is present
 		if (file_exists(Config::$PRODUCTION_CONFIG_PATH) && is_readable(Config::$PRODUCTION_CONFIG_PATH))
 		{
@@ -50,6 +74,25 @@ class Config
 			if (method_exists($ConfigProd, 'register'))
 				ConfigProd::register();
 		}
+	}
+
+	/**
+	 * Add the routes to the router
+	 *
+	 * @param object &$router The router object
+	 *
+	 * @return void
+	 */
+	public static function addRoutes(&$router)
+	{
+		// Static routes (home/index)
+		$router->add('', ['controller' => 'Home', 'action' => 'index']);
+
+		// Dynamic routes (general)
+		$router->add('{controller}', ['action' => 'index']);
+		$router->add('{controller}/{action}');
+		$router->add('{controller}/{id:\d+}', ['action' => 'view']);
+		$router->add('{controller}/{id:\d+}/{action}');
 	}
 
 	/**
