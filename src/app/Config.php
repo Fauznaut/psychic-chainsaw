@@ -55,6 +55,25 @@ class Config
 	];
 
 	/**
+	 * Email settings
+	 *
+	 * @var array
+	 */
+	public static $MAILER_DATA = [
+		'send' => [
+			'host' => '',
+			'port' => '',
+			'title' => '',
+			'user' => '',
+			'pass' => ''
+		],
+		'reply' => [
+			'title' => '',
+			'user' => ''
+		]
+	];
+
+	/**
 	 * This will determing if the config/site is production
 	 *
 	 * @return void

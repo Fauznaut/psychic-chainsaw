@@ -14,22 +14,23 @@ class Utilities
 	 *
 	 * @return string
 	 */
-	public static function getIp() {
-		if (getenv('HTTP_CLIENT_IP')) {
+	public static function getIp()
+	{
+		if (getenv('HTTP_CLIENT_IP'))
 			$ip = getenv('HTTP_CLIENT_IP');
-		} else if(getenv('HTTP_X_FORWARDED_FOR')) {
+		else if(getenv('HTTP_X_FORWARDED_FOR'))
 			$ip = getenv('HTTP_X_FORWARDED_FOR');
-		} else if(getenv('HTTP_X_FORWARDED')) {
+		else if(getenv('HTTP_X_FORWARDED'))
 			$ip = getenv('HTTP_X_FORWARDED');
-		} else if(getenv('HTTP_FORWARDED_FOR')) {
+		else if(getenv('HTTP_FORWARDED_FOR'))
 			$ip = getenv('HTTP_FORWARDED_FOR');
-		} else if(getenv('HTTP_FORWARDED')) {
+		else if(getenv('HTTP_FORWARDED'))
 			$ip = getenv('HTTP_FORWARDED');
-		} else if(getenv('REMOTE_ADDR')) {
+		else if(getenv('REMOTE_ADDR'))
 			$ip = getenv('REMOTEs_ADDR');
-		} else {
+		else
 			$ip = 'N/A';
-		}
+
 		return $ip;
 	}
 
@@ -38,11 +39,15 @@ class Utilities
 	 *
 	 * @return datetime
 	 */
-	public static function getNow() {
+	public static function getNow($condensed = false)
+	{
 		$timezone = new DateTimeZone('America/New_York');
 		$now = new DateTime();
 		$now->setTimezone($timezone);
-		return $now->format('Y\-m\-d\ h:i:s');
+		if ($condensed)
+			return $now->format('Ymdhis');
+		else
+			return $now->format('Y\-m\-d\ h:i:s');
 	}
 
 	/**

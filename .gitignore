@@ -2,6 +2,9 @@
 ### Production Config ###
 ConfigProd.php
 
+### Local Emails ###
+emails/
+
 # Created by https://www.gitignore.io/api/osx,git,sass,macos,linux,bower,windows,composer
 
 ### Bower ###

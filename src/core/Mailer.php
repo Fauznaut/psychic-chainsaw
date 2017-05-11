@@ -5,9 +5,9 @@ use \PHPMailer;
 use \app\Config;
 use \core\Utilities;
 /**
- * Mailing class
+ * Mailer class
  */
-class Mailing
+class Mailer
 {
 	/**
 	 * The PHPMAILER object
@@ -211,7 +211,7 @@ class Mailing
 	public function send()
 	{
 		if (!Config::$PRODUCTION)
-			return saveEmailToFile();
+			return $this->saveEmailToFile();
 
 		if ($this->mailer->send())
 		{
@@ -229,7 +229,23 @@ class Mailing
 	 */
 	public function saveEmailToFile()
 	{
+		$this->addRecipient('the@local.host', 'Local Host');
 		$this->mailer->preSend();
-		return file_put_contents(Utilities::getNow() . '.eml', $this->mailer->getSentMIMEMessage());
+
+		$email = $this->mailer->getSentMIMEMessage();
+		$dir = '../emails/';
+
+		$path = $dir . Utilities::getNow(true) . '.eml';
+
+		if (!is_dir($dir))
+			mkdir($dir);
+
+		$file = fopen($path, 'w');
+
+		$rtn = fwrite($file, $email);
+
+		fclose($file);
+
+		return $rtn;
 	}
 }
