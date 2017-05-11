@@ -37,4 +37,7 @@ require '../vendor/autoload.php';
 Twig_Autoloader::register();
 
 
-\app\Config::init();
+/**
+ * Config
+ */
+\app\Config::register();
