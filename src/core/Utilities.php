@@ -71,7 +71,7 @@ class Utilities
 	 */
 	public static function redirect($path = '')
 	{
-		header('Location: ' . Config::$SITE_FULL_PATH . $path);
+		header('Location: ' . Config::$SITE_FULL_PATH . $path, true, 303);
 		exit();
 	}
 
