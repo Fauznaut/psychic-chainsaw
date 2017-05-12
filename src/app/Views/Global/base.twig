@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+{# Hyper text mark-up language #}
+<html>
+
+	{# Head #}
+	{% include 'Global/helpers/head.twig' %}
+
+	{# Navbar #}
+	{% include 'Global/helpers/navbar.twig' %}
+
+	{# Body #}
+	<body>
+
+		{# Body block (should be defined in child) #}
+		{% block body %}
+		{% endblock %}
+
+	</body>
+
+	{# Footer #}
+	{% include 'Global/helpers/footer.twig' %}
+
+</html>

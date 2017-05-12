@@ -1,0 +1,12 @@
+{
+	"config": {
+		"vendor-dir": "src/vendor"
+	},
+	"name": "aaronbelz/psychic-chainsaw",
+	"type": "project",
+	"require": {
+		"twig/twig": "~1.0",
+		"IcyApril/CryptoLib": "^1.0",
+		"phpmailer/phpmailer": "^5.2"
+	}
+}

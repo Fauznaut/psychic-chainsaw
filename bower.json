@@ -1,0 +1,14 @@
+{
+	"name": "psychic-chainsaw",
+	"homepage": "https://github.com/belzaaron/psychic-chainsaw",
+	"authors": [
+		"Aaron Belz <belzaaron@gmail.com>"
+	],
+	"description": "",
+	"main": "",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"bootstrap": "^3.3.7"
+	}
+}

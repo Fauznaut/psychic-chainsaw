@@ -1,0 +1,27 @@
+<!-- Button for modal ({{ id }}) -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#{{ id }}">
+	{{ callButton.title }}
+</button>
+
+<!-- Modal ({{ id }}) -->
+<div class="modal fade" id="{{ id }}" tabindex="-1" role="dialog" aria-labelledby="{{ id }}">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="{{ id }}">{{ title }}</h4>
+			</div>
+			<div class="modal-body">
+				{{ body|raw }}
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				{% if button %}
+					<a href="{{ button.action }}" {% if button.external %}target="_blank" {% endif %}class="btn btn-primary">{{ button.title }}</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
