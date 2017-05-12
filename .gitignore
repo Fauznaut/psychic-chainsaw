@@ -3,7 +3,7 @@
 ConfigProd.php
 
 ### Local Emails ###
-emails/
+test_emails/
 
 # Created by https://www.gitignore.io/api/osx,git,sass,macos,linux,bower,windows,composer
 

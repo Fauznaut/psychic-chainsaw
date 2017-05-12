@@ -233,7 +233,7 @@ class Mailer
 		$this->mailer->preSend();
 
 		$email = $this->mailer->getSentMIMEMessage();
-		$dir = '../emails/';
+		$dir = '../test_emails/';
 
 		$path = $dir . Utilities::getNow(true) . '.eml';
 
