@@ -47,7 +47,7 @@ class Utilities
 		if ($condensed)
 			return $now->format('Ymdhis');
 		else
-			return $now->format('Y\-m\-d\ h:i:s');
+			return $now->format('Y-m-d h:i:s');
 	}
 
 	/**
