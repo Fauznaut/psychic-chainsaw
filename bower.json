@@ -10,6 +10,7 @@
 	"private": true,
 	"dependencies": {
 		"bootstrap": "^3.3.7",
-		"jQuery": "^3.2.1"
+		"jQuery": "^3.2.1",
+		"parallax.js": "^1.4.2"
 	}
 }
